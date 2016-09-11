@@ -1,0 +1,623 @@
+<!-- <div class="formSep">
+	<p class="sepH_c"><span class="label label-default">Timepickers</span></p>
+	<div class="row">
+		<div class="col-sm-3 col-md-3">
+			<div class="bootstrap-timepicker"><div class="bootstrap-timepicker-widget modal fade" data-backdrop="false" aria-hidden="true" style="display: none;"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button><h3 class="modal-title">Pick a Time</h3></div><div class="modal-body"><table><tbody><tr><td><a href="#" data-action="incrementHour"><i class="glyphicon glyphicon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="incrementMinute"><i class="glyphicon glyphicon-chevron-up"></i></a></td></tr><tr><td><input type="text" name="hour" class="bootstrap-timepicker-hour form-control" maxlength="2"></td> <td class="separator">:</td><td><input type="text" name="minute" class="bootstrap-timepicker-minute form-control" maxlength="2"></td> </tr><tr><td><a href="#" data-action="decrementHour"><i class="glyphicon glyphicon-chevron-down"></i></a></td><td class="separator"></td><td><a href="#" data-action="decrementMinute"><i class="glyphicon glyphicon-chevron-down"></i></a></td></tr></tbody></table></div><div class="modal-footer"><a href="#" class="btn btn-primary" data-dismiss="modal">OK</a></div></div></div></div>
+				<input class="form-control" id="tp_1" type="text">
+			</div>
+			<span class="help-block">Show as modal (24h)</span>
+		</div>
+		<div class="col-sm-3 col-md-3">
+			<div class="bootstrap-timepicker"><div class="bootstrap-timepicker-widget dropdown-menu"><table><tbody><tr><td><a href="#" data-action="incrementHour"><i class="glyphicon glyphicon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="incrementMinute"><i class="glyphicon glyphicon-chevron-up"></i></a></td><td class="separator">&nbsp;</td><td class="meridian-column"><a href="#" data-action="toggleMeridian"><i class="glyphicon glyphicon-chevron-up"></i></a></td></tr><tr><td><input type="text" name="hour" class="bootstrap-timepicker-hour form-control" maxlength="2"></td> <td class="separator">:</td><td><input type="text" name="minute" class="bootstrap-timepicker-minute form-control" maxlength="2"></td> <td class="separator">&nbsp;</td><td><input type="text" name="meridian" class="bootstrap-timepicker-meridian form-control" maxlength="2"></td></tr><tr><td><a href="#" data-action="decrementHour"><i class="glyphicon glyphicon-chevron-down"></i></a></td><td class="separator"></td><td><a href="#" data-action="decrementMinute"><i class="glyphicon glyphicon-chevron-down"></i></a></td><td class="separator">&nbsp;</td><td><a href="#" data-action="toggleMeridian"><i class="glyphicon glyphicon-chevron-down"></i></a></td></tr></tbody></table></div>
+				<input class="form-control" id="tp_2" type="text">
+			</div>
+			<span class="help-block">Show as dropdown (12h)</span>
+		</div>
+	</div>
+</div> -->
+
+<div class="row">
+    <div class="col-sm-12 col-md-12">
+		<div class="mbox">
+			<div class="tabbable">
+				<div class="heading">
+					<ul class="nav nav-tabs">
+						<li><a href="#mbox_new" data-toggle="tab"><i class="splashy-document_letter_edit"></i> New message</a></li>
+						<li class="active"><a href="#mbox_inbox" data-toggle="tab"><i class="splashy-mail_light_down"></i>  Inbox</a></li>
+						<li><a href="#mbox_outbox" data-toggle="tab"><i class="splashy-mail_light_up"></i> Outbox</a></li>
+						<li><a href="#mbox_trash" data-toggle="tab"><i class="icon-adt_trash"></i> Trash</a></li>
+											</ul>
+				</div>
+				<div class="tab-content">
+					<div class="tab-pane" id="mbox_new">
+						<form id="new_message_form" class="form-horizontal">
+                            <div class="form-group">
+								<label for="mail_sender" class="col-lg-2 control-label">Sender</label>
+								<div class="col-lg-3">
+									<select id="mail_sender" name="mail_sender" class="form-control input-sm">
+										<option>[email&nbsp;protected]<script async="" src="//www.google-analytics.com/analytics.js"></script><script data-cfhash="f9e31" type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></option>
+										<option>[email&nbsp;protected]<script data-cfhash="f9e31" type="text/javascript">/* <![CDATA[ */!function(t,e,r,n,c,a,p){try{t=document.currentScript||function(){for(t=document.getElementsByTagName('script'),e=t.length;e--;)if(t[e].getAttribute('data-cfhash'))return t[e]}();if(t&&(c=t.previousSibling)){p=t.parentNode;if(a=c.getAttribute('data-cfemail')){for(e='',r='0x'+a.substr(0,2)|0,n=2;a.length-n;n+=2)e+='%'+('0'+('0x'+a.substr(n,2)^r).toString(16)).slice(-2);p.replaceChild(document.createTextNode(decodeURIComponent(e)),c)}p.removeChild(t)}}catch(u){}}()/* ]]> */</script></option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="col-lg-2 control-label">Recipient</label>
+								<div class="col-lg-8">
+									<div class="tagHandler"><ul id="mail_recipients" class="tagHandlerContainer"><li class="tagInput"><input class="tagInputField form-control ui-autocomplete-input" type="text" autocomplete="off"><span role="status" aria-live="polite" class="ui-helper-hidden-accessible"></span></li></ul></div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="mail_subject" class="col-lg-2 control-label">Subject</label>
+								<div class="col-lg-8">
+									<input type="text" name="mail_subject" id="mail_subject" class="form-control">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="mail_attachments" class="col-lg-2 control-label">Attachments</label>
+								<div class="col-lg-8">
+									<a href="#" class="add_files">Add files</a>
+									<div class="mail_uploader" style="display: none;">
+										<div id="mail_attachments" class="gebo-upload" style="position: relative;"><div class="plupload_wrapper plupload_scroll"><div id="mail_attachments_container" class="plupload_container" title="Using runtime: html5"><div class="plupload"><div class="plupload_content"><div class="plupload_filelist_header"><div class="plupload_file_name">Filename</div><div class="plupload_file_action">&nbsp;</div><div class="plupload_file_status"><span>Status</span></div><div class="plupload_file_size">Size</div><div class="plupload_clearer">&nbsp;</div></div><ul id="mail_attachments_filelist" class="plupload_filelist"><li class="plupload_droptext">Drag files here.</li></ul><div class="plupload_filelist_footer"><div class="plupload_file_name"><div class="plupload_buttons"><a href="#" class="btn btn-default btn-xs plupload_add sepV_b" id="mail_attachments_browse" style="position: relative; z-index: 0;"><i class="glyphicon glyphicon-plus"></i> Add files</a><a href="#" class="btn btn-default btn-xs plupload_start plupload_disabled" style="display: none;"><i class="glyphicon glyphicon-upload"></i> Start upload</a></div><span class="plupload_upload_status"></span></div><div class="plupload_file_action"></div><div class="plupload_file_status"><span class="plupload_total_status">0%</span></div><div class="plupload_file_size"><span class="plupload_total_file_size">0 b</span></div><div class="plupload_progress"><div class="plupload_progress_container"><div class="plupload_progress_bar"></div></div></div><div class="plupload_clearer">&nbsp;</div></div></div></div></div><input type="hidden" id="mail_attachments_count" name="mail_attachments_count" value="0"></div><div id="p1ak3do7qg178cgmk1jmd1v391jub0_html5_container" class="plupload html5" style="position: absolute; width: 0px; height: 0px; overflow: hidden; z-index: -1; opacity: 0; top: 0px; left: 0px; background: transparent;"><input id="p1ak3do7qg178cgmk1jmd1v391jub0_html5" style="font-size: 999px; position: absolute; width: 100%; height: 100%;" type="file" accept="image/jpeg,image/gif,image/png,application/zip" multiple="multiple"></div></div>
+										<span class="help-block">This files will be uploaded on form submit.</span>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="mail_message" class="col-lg-2 control-label">Message</label>
+								<div class="col-lg-8">
+									<textarea name="mail_message" id="mail_message" cols="10" rows="16" class="form-control auto_expand" style="overflow: hidden; word-wrap: break-word; height: 54px;"></textarea>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-8 col-lg-offset-2">
+									<button type="submit" class="btn btn-primary">Send message</button>
+								</div>
+							</div>
+                        </form>
+					</div>
+					<div class="tab-pane active" id="mbox_inbox">
+						<div id="dt_inbox_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="col-sm-6"><div class="dt_actions">
+		<div class="btn-group">
+			<a href="javascript:void(0)" class="btn btn-default btn-sm bs_ttip" title="Answer" data-placement="auto top" data-container="body" data-viewport="body"><i class="glyphicon glyphicon-pencil"></i></a>
+			<a href="javascript:void(0)" class="btn btn-default btn-sm bs_ttip" title="Forward" data-placement="auto top" data-container="body" data-viewport="body"><i class="glyphicon glyphicon-share-alt"></i></a>
+			<a href="#" class="delete_msg btn btn-default btn-sm bs_ttip" title="Delete" data-tableid="dt_inbox" data-placement="auto top" data-container="body" data-viewport="body"><i class="glyphicon glyphicon-trash"></i></a>
+		</div>
+    </div><div id="dt_inbox_length" class="dataTables_length"><label><select size="1" name="dt_inbox_length" aria-controls="dt_inbox"><option value="10">10</option><option value="25" selected="selected">25</option><option value="50">50</option><option value="100">100</option></select> messages</label></div></div><div class="col-sm-6"><div class="dataTables_filter" id="dt_inbox_filter"><label><input type="text" aria-controls="dt_inbox"></label></div></div></div><table id="dt_inbox" class="table table_vam mbox_table dTableR dataTable" data-msg_rowlink="a" aria-describedby="dt_inbox_info" style="width: 1032px;">
+							<thead>
+								<tr role="row"><th class="table_checkbox sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 13px;"><input type="checkbox" name="select_msgs" class="select_msgs" data-tableid="dt_inbox"></th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 16px;"><i class="splashy-star_empty"></i></th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 16px;"><i class="splashy-mail_light"></i></th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_inbox" rowspan="1" colspan="1" aria-label="Subject: activate to sort column ascending" style="width: 387px;">Subject</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_inbox" rowspan="1" colspan="1" aria-label="Sender: activate to sort column ascending" style="width: 246px;">Sender</th><th class="sorting_desc" role="columnheader" tabindex="0" aria-controls="dt_inbox" rowspan="1" colspan="1" aria-sort="descending" aria-label="Date: activate to sort column ascending" style="width: 116px;">Date</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_inbox" rowspan="1" colspan="1" aria-label="Size: activate to sort column ascending" style="width: 94px;">Size</th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 16px;"><i class="icon-adt_atach"></i></th></tr>
+							</thead>
+							
+						<tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="unread odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consec…</td>
+										<td class=" ">email_17@example.com</td>
+										<td class=" sorting_1">29/06/2015</td>
+										<td class=" ">11 KB</td>
+										<td class=" "></td>
+									</tr><tr class="unread even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consect…</td>
+										<td class=" ">email_25@example.com</td>
+										<td class=" sorting_1">29/06/2015</td>
+										<td class=" ">28 KB</td>
+										<td class=" "></td>
+									</tr><tr class="unread odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light"></i></td>
+										<td class=" ">Lorem ipsum dolor sit ame…</td>
+										<td class=" ">email_27@example.com</td>
+										<td class=" sorting_1">28/06/2015</td>
+										<td class=" ">22 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_full mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet…</td>
+										<td class=" ">email_23@example.com</td>
+										<td class=" sorting_1">20/06/2015</td>
+										<td class=" ">1232 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consect…</td>
+										<td class=" ">email_12@example.com</td>
+										<td class=" sorting_1">15/06/2015</td>
+										<td class=" ">189 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet…</td>
+										<td class=" ">email_14@example.com</td>
+										<td class=" sorting_1">8/06/2015</td>
+										<td class=" ">860 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consecte…</td>
+										<td class=" ">email_22@example.com</td>
+										<td class=" sorting_1">3/06/2015</td>
+										<td class=" ">1495 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consecte…</td>
+										<td class=" ">email_12@example.com</td>
+										<td class=" sorting_1">24/05/2015</td>
+										<td class=" ">767 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consect…</td>
+										<td class=" ">email_2@example.com</td>
+										<td class=" sorting_1">23/05/2015</td>
+										<td class=" ">749 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet…</td>
+										<td class=" ">email_14@example.com</td>
+										<td class=" sorting_1">22/05/2015</td>
+										<td class=" ">636 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consect…</td>
+										<td class=" ">email_27@example.com</td>
+										<td class=" sorting_1">19/05/2015</td>
+										<td class=" ">297 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_full mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consec…</td>
+										<td class=" ">email_7@example.com</td>
+										<td class=" sorting_1">13/05/2015</td>
+										<td class=" ">198 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet c…</td>
+										<td class=" ">email_12@example.com</td>
+										<td class=" sorting_1">11/05/2015</td>
+										<td class=" ">717 KB</td>
+										<td class=" "><i class="icon-adt_atach"></i></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consect…</td>
+										<td class=" ">email_11@example.com</td>
+										<td class=" sorting_1">6/05/2015</td>
+										<td class=" ">198 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consecte…</td>
+										<td class=" ">email_9@example.com</td>
+										<td class=" sorting_1">3/05/2015</td>
+										<td class=" ">1019 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet con…</td>
+										<td class=" ">email_13@example.com</td>
+										<td class=" sorting_1">26/04/2015</td>
+										<td class=" ">536 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet cons…</td>
+										<td class=" ">email_18@example.com</td>
+										<td class=" sorting_1">25/04/2015</td>
+										<td class=" ">363 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet co…</td>
+										<td class=" ">email_16@example.com</td>
+										<td class=" sorting_1">23/04/2015</td>
+										<td class=" ">721 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consecte…</td>
+										<td class=" ">email_22@example.com</td>
+										<td class=" sorting_1">20/04/2015</td>
+										<td class=" ">507 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet conse…</td>
+										<td class=" ">email_2@example.com</td>
+										<td class=" sorting_1">19/04/2015</td>
+										<td class=" ">550 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consecte…</td>
+										<td class=" ">email_9@example.com</td>
+										<td class=" sorting_1">6/04/2015</td>
+										<td class=" ">656 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consect…</td>
+										<td class=" ">email_27@example.com</td>
+										<td class=" sorting_1">4/04/2015</td>
+										<td class=" ">1486 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet co…</td>
+										<td class=" ">email_20@example.com</td>
+										<td class=" sorting_1">1/04/2015</td>
+										<td class=" ">433 KB</td>
+										<td class=" "><i class="icon-adt_atach"></i></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet c…</td>
+										<td class=" ">email_4@example.com</td>
+										<td class=" sorting_1">21/03/2015</td>
+										<td class=" ">1000 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consec…</td>
+										<td class=" ">email_19@example.com</td>
+										<td class=" sorting_1">19/03/2015</td>
+										<td class=" ">396 KB</td>
+										<td class=" "></td>
+									</tr></tbody></table><div class="row"><div class="col-sm-6"><div class="dataTables_info" id="dt_inbox_info">Showing 1 to 25 of 29 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination pagination-sm"><li class="prev disabled"><a href="#">Previous</a></li><li class="active"><a href="#">1</a></li><li><a href="#">2</a></li><li class="next"><a href="#">Next</a></li></ul></div></div></div></div>	
+					</div>
+			
+					<div class="tab-pane" id="mbox_outbox">
+						<div id="dt_outbox_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="col-sm-6"><div class="dt_actions">
+		<div class="btn-group">
+			<a href="javascript:void(0)" class="btn btn-default btn-sm bs_ttip" title="Resend" data-placement="auto top" data-container="body" data-viewport="body"><i class="glyphicon glyphicon-share-alt"></i></a>
+			<a href="#" class="delete_msg btn btn-default btn-sm bs_ttip" title="Delete" data-tableid="dt_outbox" data-placement="auto top" data-container="body" data-viewport="body"><i class="glyphicon glyphicon-trash"></i></a>
+		</div>
+    </div><div id="dt_outbox_length" class="dataTables_length"><label><select size="1" name="dt_outbox_length" aria-controls="dt_outbox"><option value="10">10</option><option value="25" selected="selected">25</option><option value="50">50</option><option value="100">100</option></select> messages</label></div></div><div class="col-sm-6"><div class="dataTables_filter" id="dt_outbox_filter"><label><input type="text" aria-controls="dt_outbox"></label></div></div></div><table id="dt_outbox" class="table table_vam mbox_table dTableR dataTable" data-msg_rowlink="a" aria-describedby="dt_outbox_info" style="width: 100%;">
+							<thead>
+								<tr role="row"><th class="table_checkbox sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 0px;"><input type="checkbox" name="select_msgs" class="select_msgs" data-tableid="dt_outbox"></th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 0px;"><i class="splashy-star_empty"></i></th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 0px;"><i class="splashy-mail_light"></i></th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_outbox" rowspan="1" colspan="1" aria-label="Subject: activate to sort column ascending">Subject</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_outbox" rowspan="1" colspan="1" aria-label="Sender: activate to sort column ascending">Sender</th><th class="sorting_desc" role="columnheader" tabindex="0" aria-controls="dt_outbox" rowspan="1" colspan="1" aria-sort="descending" aria-label="Date: activate to sort column ascending">Date</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_outbox" rowspan="1" colspan="1" aria-label="Size: activate to sort column ascending">Size</th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 0px;"><i class="icon-adt_atach"></i></th></tr>
+							</thead>
+							
+						<tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit ame…</td>
+										<td class=" ">email_22@example.com</td>
+										<td class=" sorting_1">19/06/2015</td>
+										<td class=" ">402 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet c…</td>
+										<td class=" ">email_19@example.com</td>
+										<td class=" sorting_1">3/06/2015</td>
+										<td class=" ">1404 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet con…</td>
+										<td class=" ">email_24@example.com</td>
+										<td class=" sorting_1">13/05/2015</td>
+										<td class=" ">722 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_full mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet co…</td>
+										<td class=" ">email_9@example.com</td>
+										<td class=" sorting_1">7/05/2015</td>
+										<td class=" ">1487 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet co…</td>
+										<td class=" ">email_18@example.com</td>
+										<td class=" sorting_1">3/05/2015</td>
+										<td class=" ">1301 KB</td>
+										<td class=" "><i class="icon-adt_atach"></i></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consecte…</td>
+										<td class=" ">email_20@example.com</td>
+										<td class=" sorting_1">18/04/2015</td>
+										<td class=" ">1340 KB</td>
+										<td class=" "><i class="icon-adt_atach"></i></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet …</td>
+										<td class=" ">email_24@example.com</td>
+										<td class=" sorting_1">17/04/2015</td>
+										<td class=" ">474 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet c…</td>
+										<td class=" ">email_7@example.com</td>
+										<td class=" sorting_1">16/04/2015</td>
+										<td class=" ">851 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet conse…</td>
+										<td class=" ">email_25@example.com</td>
+										<td class=" sorting_1">16/04/2015</td>
+										<td class=" ">394 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit ame…</td>
+										<td class=" ">email_8@example.com</td>
+										<td class=" sorting_1">15/04/2015</td>
+										<td class=" ">870 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consec…</td>
+										<td class=" ">email_11@example.com</td>
+										<td class=" sorting_1">7/04/2015</td>
+										<td class=" ">506 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_full mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet…</td>
+										<td class=" ">email_25@example.com</td>
+										<td class=" sorting_1">3/04/2015</td>
+										<td class=" ">489 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_right"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet con…</td>
+										<td class=" ">email_1@example.com</td>
+										<td class=" sorting_1">18/03/2015</td>
+										<td class=" ">512 KB</td>
+										<td class=" "></td>
+									</tr></tbody></table><div class="row"><div class="col-sm-6"><div class="dataTables_info" id="dt_outbox_info">Showing 1 to 13 of 13 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination pagination-sm"><li class="prev disabled"><a href="#">Previous</a></li><li class="active"><a href="#">1</a></li><li class="next disabled"><a href="#">Next</a></li></ul></div></div></div></div>
+					</div>
+					<div class="tab-pane" id="msg_view">
+						<div class="doc_view">
+                            <div class="doc_view_header">
+								<dl class="dl-horizontal">
+									<dt>Subject</dt>
+										<dd>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</dd>
+									<dt>Sender</dt>
+										<dd>email1@example.com</dd>
+									<dt>Recipient</dt>
+										<dd>johnsmith@example.com</dd>
+									<dt>Date</dt>
+										<dd>31 May 2016 14:48:56</dd>
+									<dt><i class="icon-adt_atach"></i></dt>
+										<dd><a href="javascript:void(0)">image01.jpg</a>, <a href="javascript:void(0)">image02.jpg</a>, <a href="javascript:void(0)">document.pdf</a></dd>
+								</dl>
+							</div>
+							<div class="doc_view_content">
+								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse iaculis consectetur feugiat. Cras lacinia ullamcorper mauris, a tincidunt lacus malesuada non. Mauris ut mi ut augue vehicula suscipit. Suspendisse lobortis tempor urna, ut feugiat mauris pretium sed. Aliquam eget dolor eget dolor euismod feugiat eu et augue. Sed metus metus, condimentum quis vulputate et, pretium eu tortor. Maecenas felis felis, dignissim at pretium sit amet, condimentum a libero. Nam laoreet semper tortor sed fermentum. Duis eleifend tortor sed justo venenatis aliquam.
+								Curabitur augue elit, mattis eu ornare eget, varius sed metus. Cras fringilla fermentum malesuada. Nulla consectetur sollicitudin nibh, iaculis sagittis diam placerat ac. Aenean molestie vestibulum mattis. Suspendisse elementum, tellus quis mattis adipiscing, dui mauris pulvinar mauris, et rhoncus nisi turpis sit amet turpis. Duis nunc nisl, ullamcorper quis ultricies quis, suscipit non dui. Etiam id urna massa, at pharetra velit. Ut tortor mi, vestibulum id imperdiet a, consectetur vel lorem.
+								Maecenas eget velit pharetra tellus placerat condimentum at vel sapien. Suspendisse ac urna turpis, eget lobortis purus. Ut id arcu et nulla accumsan semper. In lacinia vestibulum nulla ac pellentesque. Nullam mattis ante ornare est tincidunt placerat. Donec non feugiat felis. Sed felis lacus, molestie in luctus vel, tempor a dui. Aliquam erat volutpat. Morbi laoreet gravida sagittis. Nulla tempor ipsum vitae tortor suscipit facilisis et at ligula. Ut lobortis, mauris vel faucibus condimentum, metus nulla varius odio, sed accumsan lorem elit sed mi. Nunc venenatis orci vel erat tincidunt quis tincidunt erat tempus. Cras vel sapien sed enim viverra egestas nec id orci. Nulla nec ornare ante. Donec tristique iaculis nunc in fringilla.
+							</div>
+							<div class="doc_view_footer clearfix">
+								<div class="btn-group pull-left">
+									<a href="javascript:void(0)" class="btn btn-default"><i class="glyphicon glyphicon-pencil"></i> Answer</a>
+									<a href="javascript:void(0)" class="btn btn-default"><i class="glyphicon glyphicon-share-alt"></i> Forward</a>
+									<a href="#" class="btn btn-default"><i class="glyphicon glyphicon-trash"></i> Delete</a>
+								</div>
+								<div class="pull-right">
+									Size: 240 KB
+								</div>
+							</div>
+                        </div>
+						<ul class="pager">
+							<li class="previous">
+								<a href="#"><i class="glyphicon glyphicon-chevron-left"></i> Previous</a>
+							</li>
+							<li class="next">
+								<a href="#">Next <i class="glyphicon glyphicon-chevron-right"></i></a>
+							</li>
+						</ul>
+					</div>
+					<div class="tab-pane" id="mbox_trash">
+						<div id="dt_trash_wrapper" class="dataTables_wrapper form-inline" role="grid"><div class="row"><div class="col-sm-6"><div class="dt_actions">
+		<div class="btn-group">
+			<a href="#" class="delete_msg btn btn-default btn-sm bs_ttip" title="Delete permamently" data-tableid="dt_trash" data-placement="auto top" data-container="body" data-viewport="body"><i class="glyphicon glyphicon-trash"></i></a>
+		</div>
+    </div><div id="dt_trash_length" class="dataTables_length"><label><select size="1" name="dt_trash_length" aria-controls="dt_trash"><option value="10">10</option><option value="25" selected="selected">25</option><option value="50">50</option><option value="100">100</option></select> messages</label></div></div><div class="col-sm-6"><div class="dataTables_filter" id="dt_trash_filter"><label><input type="text" aria-controls="dt_trash"></label></div></div></div><table id="dt_trash" class="table table_vam mbox_table dTableR dataTable" data-msg_rowlink="a" aria-describedby="dt_trash_info" style="width: 100%;">
+							<thead>
+								<tr role="row"><th class="table_checkbox sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 0px;"><input type="checkbox" name="select_msgs" class="select_msgs" data-tableid="dt_trash"></th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 0px;"><i class="splashy-star_empty"></i></th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 0px;"><i class="splashy-mail_light"></i></th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_trash" rowspan="1" colspan="1" aria-label="Subject: activate to sort column ascending">Subject</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_trash" rowspan="1" colspan="1" aria-label="Sender: activate to sort column ascending">Sender</th><th class="sorting_desc" role="columnheader" tabindex="0" aria-controls="dt_trash" rowspan="1" colspan="1" aria-sort="descending" aria-label="Date: activate to sort column ascending">Date</th><th class="sorting" role="columnheader" tabindex="0" aria-controls="dt_trash" rowspan="1" colspan="1" aria-label="Size: activate to sort column ascending">Size</th><th class="sorting_disabled" role="columnheader" rowspan="1" colspan="1" aria-label="" style="width: 0px;"><i class="icon-adt_atach"></i></th></tr>
+							</thead>
+							
+						<tbody role="alert" aria-live="polite" aria-relevant="all"><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consect…</td>
+										<td class=" ">email_27@example.com</td>
+										<td class=" sorting_1">23/06/2015</td>
+										<td class=" ">685 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_full mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet conse…</td>
+										<td class=" ">email_10@example.com</td>
+										<td class=" sorting_1">2/06/2015</td>
+										<td class=" ">423 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet con…</td>
+										<td class=" ">email_25@example.com</td>
+										<td class=" sorting_1">26/05/2015</td>
+										<td class=" ">813 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet cons…</td>
+										<td class=" ">email_25@example.com</td>
+										<td class=" sorting_1">24/05/2015</td>
+										<td class=" ">988 KB</td>
+										<td class=" "><i class="icon-adt_atach"></i></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_full mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit ame…</td>
+										<td class=" ">email_6@example.com</td>
+										<td class=" sorting_1">21/05/2015</td>
+										<td class=" ">412 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet …</td>
+										<td class=" ">email_2@example.com</td>
+										<td class=" sorting_1">15/05/2015</td>
+										<td class=" ">1171 KB</td>
+										<td class=" "><i class="icon-adt_atach"></i></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consecte…</td>
+										<td class=" ">email_14@example.com</td>
+										<td class=" sorting_1">8/05/2015</td>
+										<td class=" ">291 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consecte…</td>
+										<td class=" ">email_14@example.com</td>
+										<td class=" sorting_1">2/05/2015</td>
+										<td class=" ">1208 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit ame…</td>
+										<td class=" ">email_26@example.com</td>
+										<td class=" sorting_1">1/05/2015</td>
+										<td class=" ">522 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet consect…</td>
+										<td class=" ">email_13@example.com</td>
+										<td class=" sorting_1">5/04/2015</td>
+										<td class=" ">291 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet c…</td>
+										<td class=" ">email_24@example.com</td>
+										<td class=" sorting_1">3/04/2015</td>
+										<td class=" ">1365 KB</td>
+										<td class=" "></td>
+									</tr><tr class="even">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet …</td>
+										<td class=" ">email_18@example.com</td>
+										<td class=" sorting_1">5/03/2015</td>
+										<td class=" ">916 KB</td>
+										<td class=" "></td>
+									</tr><tr class="odd">
+										<td class="nohref "><input type="checkbox" name="msg_sel" class="select_msg"></td>
+										<td class="nohref starSelect "><i class="splashy-star_empty mbox_star"></i></td>
+										<td class=" "><i class="splashy-mail_light_stuffed"></i></td>
+										<td class=" ">Lorem ipsum dolor sit amet…</td>
+										<td class=" ">email_18@example.com</td>
+										<td class=" sorting_1">3/03/2015</td>
+										<td class=" ">320 KB</td>
+										<td class=" "></td>
+									</tr></tbody></table><div class="row"><div class="col-sm-6"><div class="dataTables_info" id="dt_trash_info">Showing 1 to 13 of 13 entries</div></div><div class="col-sm-6"><div class="dataTables_paginate paging_bootstrap"><ul class="pagination pagination-sm"><li class="prev disabled"><a href="#">Previous</a></li><li class="active"><a href="#">1</a></li><li class="next disabled"><a href="#">Next</a></li></ul></div></div></div></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+

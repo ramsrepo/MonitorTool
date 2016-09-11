@@ -1,0 +1,79 @@
+<div id="jCrumbs" class="breadCrumb module">
+	<div style="overflow: hidden; position: relative; width: 1048px;">
+		<div>
+			<h3>
+				Statistics <small>displays high level information for
+					WDW/DLR</small>
+			</h3>
+		</div>
+	</div>
+</div>
+
+<div class="container">
+	<div class="row">
+		<section class="col-lg-5 connectedSortable">
+
+			<div class="box box-primary">
+				<div class="box-header">
+					<i class="fa fa-map-marker"></i>
+					<h3 class="box-title">
+						WDW <span ng-show="showLabel">(statistics)</span>
+					</h3>
+				</div>
+				<div class="box-body no-padding">
+					<div width="50" height="50"">
+						<canvas id="bar" class="chart chart-bar" chart-data="wdwdata"
+							chart-options="options" chart-labels="wdwlabels"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="col-lg-5 connectedSortable">
+			<div class="box box-primary">
+				<div class="box-header">
+					<i class="fa fa-map-marker"></i>
+					<h3 class="box-title">
+						DLR <span ng-show="showLabel">(statistics)</span>
+					</h3>
+				</div>
+				<div class="box-body no-padding">
+					<div width="50" height="50"">
+						<canvas id="bar" class="chart chart-bar" data="dlrdata"
+							options="options" labels="dlrlabels"></canvas>
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+	<div class="row" >
+		<section class="sidebar_info">
+			<ul class="list-unstyled">
+			<li><span class="act">871 - </span> <strong>&nbsp;TP Interface Failure</strong></li>
+			<li><span class="act">806 - </span> <strong>&nbsp; Module not available</strong></li>
+			<li><span class="act">505 - </span> <strong>&nbsp; Product not permitted</strong></li>
+			<li><span class="act">832 - </span> <strong>&nbsp; Payment not approved</strong></li>
+			<li><span class="act">828 - </span> <strong>&nbsp; Credit Card denied</strong></li>
+			<li><span class="act">815 - </span> <strong>&nbsp; Duplicate Order</strong></li>
+			<li><span class="act">810 - </span> <strong>&nbsp; Product Invalid</strong></li>
+			<li><span class="act">554 - </span> <strong>&nbsp; Invalid Sales Date/Time</strong></li>
+			<li><span class="act">301 - </span> <strong>&nbsp; Invalid message content</strong></li>
+			<li><span class="act">310 - </span> <strong>&nbsp; Transaction Timed-Out</strong></li>
+			<li>
+				<p style="font-size:11px;" class="act-warning">Click <a href="javascript:void(0);" ng-click="toggleErrorInfo();">here</a> for More Error codes</p>
+			</li>
+		</ul>
+		</section>
+	</div>
+	<!-- <div class="row">
+		<section class="col-lg-4">
+			<h3 class="heading">Note</h3>
+			
+		</section>	
+	</div> -->
+	<div pageslide ps-open="checked" ps-speed="0.25" ps-zindex="1000" ps-size="600px">
+        <div>
+            <div ng-include="'errorList.html'"></div>
+        </div>
+    </div>
+
+</div>

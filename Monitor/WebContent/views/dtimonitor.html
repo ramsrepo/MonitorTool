@@ -1,0 +1,398 @@
+<div id="jCrumbs" class="breadCrumb module">
+	<div style="overflow: hidden; position: relative; width: 1048px;">
+		<div>
+			<h3>Monitor <small>displays DTI transactional information for WDW/DLR</small> </h3>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-sm-12 col-md-12">
+		<div class="mbox">
+			<div class="tabbable">
+				<div>
+					<ul class="nav nav-tabs">
+						<li class="active"><a data-target="#monitorInput" data-toggle="tab"><i
+								class="splashy-document_letter_edit"></i> Details</a></li>
+						<li><a data-target="#mbox_inbox" data-toggle="tab"><i
+								class="splashy-mail_light_down"></i> List</a></li>
+					</ul>
+				</div>
+				<div class="tab-content">
+					<div class="tab-pane active" id="monitorInput">
+						<form id="new_message_form" class="form-horizontal">
+							<div class="form-group">
+								<label for="environment" class="col-lg-2 control-label">Environment</label>
+								<div class="col-lg-2">
+									<select id="environment" name="environment"
+										class="form-control input-sm">
+										<option>PROD</option>
+										<option>DEV</option>
+										<option>ALL</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="campus" class="col-lg-2 control-label">Campus</label>
+								<div class="col-lg-2">
+									<select id="campus" name="campus" class="form-control input-sm">
+										<option>WDW</option>
+										<option>DLR</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="payloadId" class="col-lg-2 control-label">PayloadID</label>
+								<div class="col-lg-2">
+									<input type="text" name="payloadId" id="payloadId"
+										class="form-control input-sm">
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="campus" class="col-lg-2 control-label">TSMAC</label>
+								<div class="col-lg-2">
+									<select id="campus" name="campus" class="form-control input-sm">
+										<option selected>Select One TSMAC</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="error" class="col-lg-2 control-label">Error
+									#</label>
+								<div class="col-lg-2">
+									<input type="text" name="error" id="error"
+										class="form-control input-sm">
+								</div>
+							</div>
+
+							<div class="form-group">
+								<div class="col-lg-8 col-lg-offset-2">
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
+						</form>
+
+					</div>
+					<div class="tab-pane" id="mbox_inbox">
+						<div class="row">
+							<div class="col-sm-12 col-md-12">
+								<form class="form-horizontal">
+									<fieldset>
+										<div class="form-group">
+											<div class="col-sm-12">
+												<label class="checkbox-inline"> <input
+													value="autoRefresh" id="autoRefresh"
+													name="autoRefresh" type="checkbox"> Auto Refresh
+												</label> 
+												<label class="checkbox-inline"> <input
+													value="resultInSameWindow" id="resultInSameWindow"
+													name="resultInSameWindow" checked="checked" type="checkbox">
+													Result In Same Window
+												</label> 
+												<label class="checkbox-inline"> <input
+													value="displayTsmac" id="displayTsmac"
+													name="displayTsmac" checked="checked" type="checkbox"> Show TSMAC Desc
+												</label>
+												<label class="checkbox-inline"> <input
+													value="displayTsloc" id="displayTsloc"
+													name="displayTsloc" checked="checked" type="checkbox"> Show TSLOC Desc
+												</label>
+											</div>
+										</div>
+									</fieldset>
+								</form>
+							</div>
+							<!-- <div class="col-sm-6">
+									<div class="dataTables_filter" id="dt_inbox_filter">
+										<label><input type="text" aria-controls="dt_inbox"></label>
+									</div>
+								</div> -->
+						</div>
+						<div id="dt_inbox_wrapper" class="dataTables_wrapper form-inline"
+							role="grid">
+							<table id="dt_inbox"
+								class="table table_vam mbox_table dTableR dataTable"
+								data-msg_rowlink="a" aria-describedby="dt_inbox_info"
+								style="width: 1032px;">
+								<thead>
+									<tr role="row">
+										<th class="sorting_desc" role="columnheader" tabindex="0"
+											aria-controls="dt_inbox" rowspan="1" colspan="1" style="width: 120px;">Date/Time</th>
+										<th class="sorting" role="columnheader" tabindex="0"
+											aria-controls="dt_inbox" rowspan="1" colspan="1" style="width: 50px;">Campus</th>
+										<th class="sorting_desc" role="columnheader" tabindex="0"
+											aria-controls="dt_inbox" rowspan="1" colspan="1"
+											aria-sort="descending" style="width: 116px;">TSMAC</th>
+										<th class="sorting" role="columnheader" tabindex="0" 
+											aria-controls="dt_inbox" rowspan="1" colspan="1"
+											aria-label="Size: activate to sort column ascending"
+											style="width: 120px;">TSMAC Desc</th>
+										<th class="sorting_desc" role="columnheader" tabindex="0"
+											aria-controls="dt_inbox" rowspan="1" colspan="1"
+											aria-sort="descending"
+											aria-label="Date: activate to sort column ascending"
+											style="width: 116px;">TSLOC</th>
+										<th class="sorting" role="columnheader" tabindex="0"
+											aria-controls="dt_inbox" rowspan="1" colspan="1"
+											aria-label="Size: activate to sort column ascending"
+											style="width: 120px;">TSLOC Desc</th>
+										<th class="sorting_desc" role="columnheader" tabindex="0"
+											aria-controls="dt_inbox" rowspan="1" colspan="1"
+											aria-sort="descending"
+											aria-label="Date: activate to sort column ascending"
+											style="width: 160px;">DTI Logs</th>
+										<th class="sorting" role="columnheader" tabindex="0"
+											aria-controls="dt_inbox" rowspan="1" colspan="1"
+											aria-label="Size: activate to sort column ascending"
+											style="width: 80px;">Status</th>
+										
+									</tr>
+								</thead>
+
+								<tbody role="alert" aria-live="polite" aria-relevant="all">
+									<tr>
+										<td>2016-06-29 10:07:16</td>
+										<td><button type="button" class="btn btn-primary btn-sm"
+												disabled="">WDW</button></td>
+										<td>DS6468P</td>
+										<td>DS - All Guest Services - POS</td>
+										<td>AGS430150</td>
+										<td>Champions World Resort</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102460586&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100374344&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a><font
+											color="WHITE">.</font><font color="WHITE">.</font></td>
+
+										<td><font color="4D4DFF">In Process</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 09:53:19</td>
+										<td><button type="button" class="btn btn-danger btn-sm"
+												disabled="">DLR</button></td>
+										<td>WDPRONADLR</td>
+										<td>WDPRO North America DLR</td>
+										<td>DLR_MOBILE</td>
+										<td>DLR Mobile App</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102461335&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100375089&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=otp&amp;OUTBOUND_TP_LOG=100356063&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=ots&amp;OUTBOUND_TS_LOG=102415243&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTS</a></td>
+
+										<td><font color="4D4DFF">In Process</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 10:07:14</td>
+										<td><button type="button" class="btn btn-primary btn-sm"
+												disabled="">WDW</button></td>
+										<td>WDPRONAWDW</td>
+										<td>WDPRO North America WDW</td>
+										<td>PROGENSTR</td>
+										<td>WDPRO WDW General Store</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102460585&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100374343&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a><font
+											color="WHITE">.</font><font color="WHITE">.</font></td>
+
+										<td><font color="4D4DFF">In Process</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 10:07:10</td>
+										<td><button type="button" class="btn btn-danger btn-sm"
+												disabled="">DLR</button></td>
+										<td>SF_QUERY</td>
+										<td>SF OneView DLR</td>
+										<td>APQUERY_DLR</td>
+										<td>SF OneView DLR AP Query</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102460584&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100374342&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=otp&amp;OUTBOUND_TP_LOG=100355316&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=ots&amp;OUTBOUND_TS_LOG=102414440&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTS</a></td>
+
+										<td><font color="green">Success</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 10:07:09</td>
+										<td><button type="button" class="btn btn-danger btn-sm"
+												disabled="">DLR</button></td>
+										<td>SF_QUERY</td>
+										<td>SF OneView DLR</td>
+										<td>APQUERY_DLR</td>
+										<td>SF OneView DLR AP Query</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102461508&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100375261&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=otp&amp;OUTBOUND_TP_LOG=100356235&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=ots&amp;OUTBOUND_TS_LOG=102415416&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTS</a></td>
+
+										<td><font color="green">Success</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 10:07:16</td>
+										<td><button type="button" class="btn btn-primary btn-sm"
+												disabled="">WDW</button></td>
+										<td>DS6468P</td>
+										<td>DS - All Guest Services - POS</td>
+										<td>AGS430150</td>
+										<td>Champions World Resort</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102460586&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100374344&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a><font
+											color="WHITE">.</font><font color="WHITE">.</font></td>
+
+										<td><font color="4D4DFF">In Process</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 09:53:19</td>
+										<td><button type="button" class="btn btn-danger btn-sm"
+												disabled="">DLR</button></td>
+										<td>WDPRONADLR</td>
+										<td>WDPRO North America DLR</td>
+										<td>DLR_MOBILE</td>
+										<td>DLR Mobile App</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102461335&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100375089&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=otp&amp;OUTBOUND_TP_LOG=100356063&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=ots&amp;OUTBOUND_TS_LOG=102415243&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTS</a></td>
+
+										<td><font color="4D4DFF">In Process</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 10:07:14</td>
+										<td><button type="button" class="btn btn-primary btn-sm"
+												disabled="">WDW</button></td>
+										<td>WDPRONAWDW</td>
+										<td>WDPRO North America WDW</td>
+										<td>PROGENSTR</td>
+										<td>WDPRO WDW General Store</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102460585&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100374343&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a><font
+											color="WHITE">.</font><font color="WHITE">.</font></td>
+
+										<td><font color="4D4DFF">In Process</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 10:07:10</td>
+										<td><button type="button" class="btn btn-danger btn-sm"
+												disabled="">DLR</button></td>
+										<td>SF_QUERY</td>
+										<td>SF OneView DLR</td>
+										<td>APQUERY_DLR</td>
+										<td>SF OneView DLR AP Query</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102460584&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100374342&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=otp&amp;OUTBOUND_TP_LOG=100355316&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=ots&amp;OUTBOUND_TS_LOG=102414440&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTS</a></td>
+
+										<td><font color="green">Success</font></td>
+									</tr>
+									<tr>
+										<td>2016-06-29 10:07:09</td>
+										<td><button type="button" class="btn btn-danger btn-sm"
+												disabled="">DLR</button></td>
+										<td>SF_QUERY</td>
+										<td>SF OneView DLR</td>
+										<td>APQUERY_DLR</td>
+										<td>SF OneView DLR AP Query</td>
+										<td>&nbsp;&nbsp;<a id="myAnchor"
+											class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=its&amp;INBOUND_TS_LOG=102461508&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITS</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=itp&amp;INBOUND_TP_LOG=100375261&amp;magcode=x"
+											role="button" onclick="openWindow(this)">ITP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=otp&amp;OUTBOUND_TP_LOG=100356235&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTP</a>&nbsp;&nbsp;<a
+											id="myAnchor" class="btn btn-success btn-xs" href="#"
+											name="environment=prod&amp;selection=log&amp;logtype=ots&amp;OUTBOUND_TS_LOG=102415416&amp;magcode=x"
+											role="button" onclick="openWindow(this)">OTS</a></td>
+
+										<td><font color="green">Success</font></td>
+									</tr>
+								</tbody>
+							</table>
+							<div class="row">
+								<div class="col-sm-6">
+									<div class="dataTables_info" id="dt_inbox_info">Showing 1
+										to 25 of 29 entries</div>
+								</div>
+								<div class="col-sm-6">
+									<div class="dataTables_paginate paging_bootstrap">
+										<ul class="pagination pagination-sm">
+											<li class="prev disabled"><a href="#">Previous</a></li>
+											<li class="active"><a href="#">1</a></li>
+											<li><a href="#">2</a></li>
+											<li class="next"><a href="#">Next</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
